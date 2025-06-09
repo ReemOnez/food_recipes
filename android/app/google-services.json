@@ -12,7 +12,20 @@
           "package_name": "com.food.recipes"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "378602164412-gkr20to979ubrk8v9o0u64dukrfsb86f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.food.recipes",
+            "certificate_hash": "b648111ab806eda679468f7641703e95379f2adf"
+          }
+        },
+        {
+          "client_id": "378602164412-vrc4jaanhegm051vldbvb5kiitq6v41r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAeOciRwzEUA3yD2yVnyDlT7yHTUgw6-6E"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378602164412-vrc4jaanhegm051vldbvb5kiitq6v41r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

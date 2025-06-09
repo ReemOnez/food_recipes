@@ -8,4 +8,8 @@ class AppConstants {
   static const userEmail = 'CACHED_USER_EMAIL';
   static const userName = 'CACHED_USER_NAME';
   static const token = 'CACHED_TOKEN';
+
+  static const googleProvider = 'Google';
+  static const faceBookProvider = 'FaceBook';
+  static const appleProvider = 'Apple';
 }
