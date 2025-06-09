@@ -133,7 +133,7 @@ class AuthRepository {
           print('Successfully signed in with new/chosen account. ID Token: $idToken');
         }
 
-        await Future.delayed(const Duration(seconds: 3));
+        // await Future.delayed(const Duration(seconds: 3));
         final user = UserModel(
           id: googleUser.id,
           email: googleUser.email,
