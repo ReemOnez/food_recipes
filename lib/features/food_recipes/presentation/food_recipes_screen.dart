@@ -4,6 +4,8 @@ import 'package:recipes/features/auth/application/auth_provider.dart';
 import 'package:recipes/features/auth/data/auth_state.dart';
 
 class FoodRecipesScreen extends ConsumerWidget {
+  static const String routeName = 'FoodRecipesScreen';
+
   const FoodRecipesScreen({super.key});
 
   @override

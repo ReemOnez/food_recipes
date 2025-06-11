@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipes/features/auth/presentation/auth_screen_wrapper.dart';
+import 'package:recipes/features/bottom_Navigation_bar/presentation/bottom_navigation_bar_screen.dart';
 import 'package:recipes/helpers/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,9 +13,21 @@ Future<void> main() async {
 
   late SharedPreferences sharedPreference;
 
-  await Future.wait([ScreenUtil.ensureScreenSize(), SharedPreferences.getInstance().then((instance) => sharedPreference = instance)]);
+  await Future.wait([
+    ScreenUtil.ensureScreenSize(),
+    SharedPreferences.getInstance().then(
+      (instance) => sharedPreference = instance,
+    ),
+  ]);
 
-  runApp(ProviderScope(overrides: [sharedPreferencesProvider.overrideWithValue(sharedPreference)], child: const MyApp()));
+  runApp(
+    ProviderScope(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(sharedPreference),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends ConsumerStatefulWidget {
@@ -52,10 +65,12 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
         title: 'Food Recipes',
         routes: AppNamedRoutes.namedRoutes,
         // locale: ref.watch(languageProvider) == 'en' ? const Locale('en') : const Locale('ar'),
-        initialRoute: 'AuthScreenWrapper',
+        initialRoute: BottomNavigationScreen.routeName,
         builder: (context, child) {
           return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)),
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: const TextScaler.linear(1)),
             child: child!,
           );
         },

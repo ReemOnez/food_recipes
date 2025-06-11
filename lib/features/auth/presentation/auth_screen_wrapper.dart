@@ -6,6 +6,7 @@ import 'package:recipes/features/auth/presentation/auth_screen.dart';
 import 'package:recipes/features/food_recipes/presentation/food_recipes_screen.dart';
 
 class AuthScreenWrapper extends ConsumerWidget {
+  static const String routeName = 'AuthScreenWrapper';
   const AuthScreenWrapper({super.key});
 
   @override
