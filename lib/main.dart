@@ -65,7 +65,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
         title: 'Food Recipes',
         routes: AppNamedRoutes.namedRoutes,
         // locale: ref.watch(languageProvider) == 'en' ? const Locale('en') : const Locale('ar'),
-        initialRoute: BottomNavigationScreen.routeName,
+        initialRoute: AuthScreenWrapper.routeName,
         builder: (context, child) {
           return MediaQuery(
             data: MediaQuery.of(

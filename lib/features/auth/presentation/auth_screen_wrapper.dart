@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipes/features/auth/application/auth_provider.dart';
 import 'package:recipes/features/auth/data/auth_state.dart';
 import 'package:recipes/features/auth/presentation/auth_screen.dart';
+import 'package:recipes/features/bottom_Navigation_bar/presentation/bottom_navigation_bar_screen.dart';
 import 'package:recipes/features/food_recipes/presentation/food_recipes_screen.dart';
 
 class AuthScreenWrapper extends ConsumerWidget {
@@ -22,7 +23,7 @@ class AuthScreenWrapper extends ConsumerWidget {
       case AuthStatus.authenticated:
       case AuthStatus.socialSuccess:
         final user = authState.user!;
-        return FoodRecipesScreen();
+        return BottomNavigationScreen();
 
       case AuthStatus.loggedOut:
         return const AuthScreen();
