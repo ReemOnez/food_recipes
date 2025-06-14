@@ -1,0 +1,25 @@
+{
+  "@@locale": "en",
+  "english": "English",
+  "arabic": "Arabic",
+  "appTitle": "Recipe App",
+  "loginButton": "Login",
+  "welcomeMessage": "Hello {userName}!",
+  "@welcomeMessage": {
+    "description": "A welcome message with a placeholder for the user's name.",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Guest"
+      }
+    }
+  },
+  "emailHint": "Enter your email",
+  "passwordHint": "Enter your password",
+  "language": "Language",
+  "hello": "Hello",
+  "authScreen": "Authentication",
+  "cancelButton": "Cancel",
+  "selectLanguage": "Select your language",
+  "changeLanguageButtonText": "Change Language"
+}

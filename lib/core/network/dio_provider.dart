@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:recipes/core/local_storage/shared_preferences.dart';
+import 'package:recipes/features/localization/application/locale_provider.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio(
@@ -15,11 +17,11 @@ final dioProvider = Provider<Dio>((ref) {
   dio.interceptors.addAll([
     InterceptorsWrapper(
       onRequest: (options, handler) async {
-        /// Read token from sharedPreference:
-        /// if (ref.watch(sharedPreferencesProvider).getToken != null)
-        /// { options.headers['Authorization'] = 'Bearer ${ref.watch(sharedPreferencesProvider).getToken}';}
-        final token = 'your_access_token';
-        options.headers['Authorization'] = 'Bearer $token';
+        final token = ref.read(sharedPreferencesProvider).getToken;
+        if (token != null && token.isNotEmpty) {
+          options.headers['Authorization'] = 'Bearer $token';
+        }
+        options.headers['Accept-Language'] = ref.watch(localeProvider).languageCode;
         return handler.next(options);
       },
       onResponse: (response, handler) {

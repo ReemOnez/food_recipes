@@ -1,0 +1,25 @@
+{
+  "@@locale": "ar",
+  "english": "English",
+  "arabic": "العربية",
+  "appTitle": "تطبيق وصفات",
+  "loginButton": "تسجيل الدخول",
+  "welcomeMessage": "مرحباً {userName}!",
+  "@welcomeMessage": {
+    "description": "رسالة ترحيب تحتوي على مكان لاسم المستخدم.",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Guest"
+      }
+    }
+  },
+  "emailHint": "أدخل بريدك الإلكتروني",
+  "passwordHint": "أدخل كلمة المرور",
+  "language": "اللغة",
+  "hello": "مرحبا",
+  "authScreen": "تسجيل الدخول",
+  "cancelButton": "إلغاء",
+  "selectLanguage": "اختر لغتك",
+  "changeLanguageButtonText": "تغيير اللغة"
+}

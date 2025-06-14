@@ -1,0 +1,8 @@
+# l10n.yaml
+arb-dir: lib/l10n # Directory where your .arb files will be
+template-arb-file: app_en.arb # The main/template ARB file
+output-localization-file: app_localizations.dart # Name of the generated Dart file
+  # nullable-getter: false # Set to true if you want getters to be nullable if a string is missing, default is false (throws error)
+  # synthetic-package: false # Set to true if you want the generated files to be created under .dart_tool/flutter_gen instead of lib/generated. Default is true.
+# Keeping it false (default behavior now means output-dir is not needed)
+# output-dir: lib/generated # Only use if synthetic-package is false and you want a custom output directory for the generated files (not output-localization-file)

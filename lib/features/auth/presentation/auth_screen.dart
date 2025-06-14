@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipes/features/auth/application/auth_provider.dart';
 import 'package:recipes/features/auth/data/auth_state.dart';
+import 'package:recipes/l10n/app_localizations.dart';
 
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
@@ -9,7 +10,7 @@ class AuthScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Authentication Screen')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.authScreen)),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
