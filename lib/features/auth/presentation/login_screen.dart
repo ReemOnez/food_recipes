@@ -5,6 +5,7 @@ import 'package:recipes/core/widgets/custom_text_field.dart';
 import 'package:recipes/features/auth/application/auth_provider.dart';
 import 'package:recipes/features/auth/data/auth_state.dart'; // YOUR AUTHSTATE PATH
 import 'package:recipes/features/auth/logic/auth_helpers.dart';
+import 'package:recipes/features/auth/presentation/sign_up_screen.dart';
 import 'package:recipes/helpers/app_constants.dart'; // YOUR APP CONSTANTS
 import 'dart:io';
 
@@ -54,6 +55,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     final authState = ref.watch(authStateProvider);
 
     // Updated loading state checks based on AuthStatus
@@ -167,6 +169,31 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       : const Text('Login'),
                 ),
                 SizedBox(height: 20.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'ليس لديك حساب؟ ', // Already have an account?
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.of(context).pushReplacementNamed(SignUpScreen.routeName),
+                      borderRadius: BorderRadius.circular(4.0),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                        child: Text(
+                          'إنشاء الحساب', // Login
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20.0),
 
                 // --- Social Login Divider ---
                 Row(
