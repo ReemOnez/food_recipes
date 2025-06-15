@@ -29,7 +29,6 @@ class MyApp extends ConsumerStatefulWidget {
 class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
-
     ScreenUtil.init(context, designSize: const Size(375, 812));
 
     return GestureDetector(
@@ -48,7 +47,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
           return AppLocalizations.of(ctx)!.appTitle;
         },
         routes: AppNamedRoutes.namedRoutes,
-       locale: ref.watch(localeProvider),
+        locale: ref.watch(localeProvider),
         initialRoute: AuthScreenWrapper.routeName,
         builder: (context, child) {
           return MediaQuery(

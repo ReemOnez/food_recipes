@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipes/features/auth/application/auth_provider.dart';
 import 'package:recipes/features/auth/data/auth_state.dart';
 import 'package:recipes/features/auth/presentation/auth_screen.dart';
+import 'package:recipes/features/auth/presentation/login_screen.dart';
 import 'package:recipes/features/bottom_Navigation_bar/presentation/bottom_navigation_bar_screen.dart';
 import 'package:recipes/features/food_recipes/presentation/food_recipes_screen.dart';
 
@@ -27,7 +28,7 @@ class AuthScreenWrapper extends ConsumerWidget {
         return BottomNavigationScreen();
 
       case AuthStatus.loggedOut:
-        return const AuthScreen();
+        return const LoginScreen();
 
       case AuthStatus.tokenExpired:
         return const Scaffold(body: Center(child: Text('Session expired. Please log in again.')));
@@ -39,7 +40,7 @@ class AuthScreenWrapper extends ConsumerWidget {
         return const Scaffold(body: Center(child: Text('User already exists.')));
 
       case AuthStatus.invalidCredentials:
-        return const AuthScreen(); // The LoginPage itself shows the error
+        return const LoginScreen(); // The LoginPage itself shows the error
 
       case AuthStatus.networkError:
         return const Scaffold(body: Center(child: Text('Network error.')));
