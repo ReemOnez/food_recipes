@@ -9,10 +9,15 @@ class ApiClient {
 
   ApiClient(this._dio);
 
-  Future<ApiResult<T>> get<T>(String path, {Map<String, dynamic>? queryParameters, T Function(dynamic json)? decoder, Options? options}) async {
+  Future<ApiResult<T>> get<T>(
+    String path, {
+    Map<String, dynamic>? queryParameters,
+    T Function(dynamic json)? decoder,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async {
     try {
-      final response = await _dio.get(path, queryParameters: queryParameters, options: options);
-
+      final response = await _dio.get(path, queryParameters: queryParameters, options: options, cancelToken: cancelToken);
       return ApiResult.fromJson(response.data, decoder);
     } catch (e) {
       final error = NetworkException.from(e);

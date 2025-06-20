@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:recipes/features/ads/presentation/ads_screen.dart';
 import 'package:recipes/features/auth/presentation/auth_screen_wrapper.dart';
 import 'package:recipes/helpers/routes.dart';
 import 'package:recipes/l10n/app_localizations.dart';
@@ -37,7 +38,15 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        // theme: AppTheme(fontFamily: ref.watch(languageProvider) == 'ar' ? 'Plex' : 'Poppins').lightTheme,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Cairo',
+          textTheme: TextTheme(
+            displayLarge: TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.bold),
+            titleLarge: TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.w600),
+            bodyMedium: TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.normal),
+          ),
+        ),
         // navigatorKey: navigatorKey,
         // navigatorObservers: [AppRouteObserver(ref: ref)],
         // scaffoldMessengerKey: scaffoldMessengerKey,
@@ -48,7 +57,8 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
         },
         routes: AppNamedRoutes.namedRoutes,
         locale: ref.watch(localeProvider),
-        initialRoute: AuthScreenWrapper.routeName,
+        initialRoute: AdsListScreen.routeName,
+        // AuthScreenWrapper.routeName,
         builder: (context, child) {
           return MediaQuery(
             data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)),

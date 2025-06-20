@@ -20,7 +20,7 @@ class ApiResult<T> {
   factory ApiResult.fromJson(Map<String, dynamic> json, T Function(dynamic json)? decoder) {
     return json['error'] == true
         ? ApiResult.failure(json['message'] ?? 'Unknown error')
-        : ApiResult.success(decoder != null ? decoder(json['data']) : json['data'], meta: json['meta']);
+        : ApiResult.success(decoder != null ? decoder(json['products']) : json['products'], meta: json['meta']);
   }
 
   bool get isSuccess => type == ApiResultType.success;

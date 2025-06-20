@@ -1,3 +1,4 @@
+import 'package:recipes/features/ads/presentation/ads_screen.dart';
 import 'package:recipes/features/auth/presentation/auth_screen.dart';
 import 'package:recipes/features/auth/presentation/auth_screen_wrapper.dart';
 import 'package:recipes/features/auth/presentation/login_screen.dart';
@@ -17,5 +18,6 @@ class AppNamedRoutes {
     'BottomNavigationScreen': (context) => const BottomNavigationScreen(),
     'LoginScreen': (context) => const LoginScreen(),
     'SignUpScreen': (context) => const SignUpScreen(),
+    'AdsListScreen': (context) => const AdsListScreen(),
   };
 }
